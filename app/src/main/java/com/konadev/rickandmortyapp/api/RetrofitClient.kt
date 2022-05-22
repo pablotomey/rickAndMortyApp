@@ -10,7 +10,7 @@ object RetrofitClient {
 
     private val logging = HttpLoggingInterceptor()
 
-    val rickAndMortyApi by lazy {
+    val rickAndMortyApi: RickAndMortyApi by lazy {
         // interceptor
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
         val client = OkHttpClient.Builder().addInterceptor(logging).build()

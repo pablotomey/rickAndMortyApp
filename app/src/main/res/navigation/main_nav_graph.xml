@@ -19,5 +19,8 @@
         <action
             android:id="@+id/action_characterDetailFragment_to_charactersFragment"
             app:destination="@id/charactersFragment" />
+        <argument
+            android:name="character"
+            app:argType="com.konadev.rickandmortyapp.models.Character" />
     </fragment>
 </navigation>

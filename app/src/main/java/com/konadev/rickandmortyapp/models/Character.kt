@@ -1,8 +1,12 @@
 package com.konadev.rickandmortyapp.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
+
 data class Character(
     val created: String,
-    val episode: List<Any>,
+    val episode: List<String>,
     val gender: String,
     val id: Int,
     val image: String,
@@ -11,4 +15,4 @@ data class Character(
     val status: String,
     val type: String,
     val url: String
-)
+): Serializable

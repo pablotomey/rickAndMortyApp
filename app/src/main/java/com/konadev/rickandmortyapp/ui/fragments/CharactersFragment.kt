@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.konadev.rickandmortyapp.MainActivity
@@ -61,5 +62,8 @@ class CharactersFragment: Fragment(R.layout.fragment_characters), CharactersAdap
 
     override fun onCharacterClick(character: Character, position: Int) {
         Toast.makeText(requireContext(), "Click item!", Toast.LENGTH_SHORT).show()
+        val bundle = Bundle()
+        bundle.putSerializable("character", character)
+        findNavController().navigate(R.id.action_charactersFragment_to_characterDetailFragment, bundle)
     }
 }
